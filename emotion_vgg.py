@@ -20,7 +20,7 @@ train_datagen = ImageDataGenerator(
 					rescale=1./255,
 					rotation_range=30,
 					shear_range=0.3,
-					zoom_tange=0.3,
+					zoom_range=0.3,
 					width_shift_range=0.4, 
 					height_shift_range=0.4,
 					horizontal_flip=True, 
@@ -55,7 +55,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.2))
 
 
-model.add(Conv2D(64, (3,3), padding='same', kernel_initializer='he_normal')
+model.add(Conv2D(64, (3,3), padding='same', kernel_initializer='he_normal'))
 model.add(Activation('elu'))
 model.add(BatchNormalization())
 model.add(Conv2D(64, (3,3), padding='same', kernel_initializer='he_normal'))
@@ -75,7 +75,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.2))
 
 
-model.add(Conv2D(256, (3,3), padding='same', kernel_initializer='he_normal')
+model.add(Conv2D(256, (3,3), padding='same', kernel_initializer='he_normal'))
 model.add(Activation('elu'))
 model.add(BatchNormalization())
 model.add(Conv2D(256, (3,3), padding='same', kernel_initializer='he_normal'))
